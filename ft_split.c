@@ -6,73 +6,80 @@
 /*   By: abensett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 13:20:58 by abensett          #+#    #+#             */
-/*   Updated: 2021/06/09 15:47:18 by abensett         ###   ########.fr       */
+/*   Updated: 2021/06/10 17:56:31 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_separator(char c, char charset)
+static int	ft_countwords(char *str, char c)
 {
-	if (c == charset)
-		return (1);
-	return (0);
-}
-
-int	ft_numwords(char const *s, char c)
-{
-	unsigned int	i;
-	int				cntr;
+	int	i;
+	int	count;
+	int	j;
 
 	i = 0;
-	cntr = 0;
-	while (s[i])
+	count = 0;
+	while (str[i] == c && str[i])
+		i++;
+	while (str[i])
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i] != '\0')
-			cntr++;
-		while (s[i] && (s[i] != c))
+		if (str[i] != c && str[i])
+			j = 1;
+		if (str[i] == c)
+		{
+			while (str[i] == c && str[i])
+				i++;
+			if (str[i])
+				count++;
+		}
+		else
 			i++;
 	}
-	return (cntr);
+	return (count + j);
 }
 
-char	*ft_dupword(char const *s, int n)
+static	char	*ft_dup_word(char *str, char c)
 {
-	char	*str;
+	int		i;
+	char	*tab;
 
-	str = (char *)malloc((sizeof(char) * (n + 1)));
-	if (!(s))
+	i = 0;
+	tab = 0;
+	while (str[i] && str[i] != c)
+		i++;
+	tab = (char *)malloc(sizeof(char) * (i + 1));
+	if (!tab)
 		return (NULL);
-	str[n] = '\0';
-	while (n--)
-		str[n] = s[n];
-	return (str);
+	ft_strlcpy(tab, str, i + 1);
+	return (tab);
 }
 
 char	**ft_split(char const *s, char c)
 {
+	int		i;
+	int		words;
 	char	**tab;
-	int	i;
-	int	j;
-	int	k;
 
-	tab = (char **)malloc((ft_numwords(s, c) + 1) * sizeof (char *));
-	if (!(tab))
+	i = -1;
+	words = ft_countwords((char *)s, c);
+	tab = malloc(sizeof(char *) * (words + 1));
+	if (!tab)
 		return (NULL);
-	k = 0;
-	j = 0;
-	while (s[j])
+	while (++i < words)
 	{
-		while (s[j] && ft_separator(s[j], c))
-			j++;
-		i = j;
-		while (s[j] && !ft_separator(s[j], c))
-			j++;
-		if (j > i)
-			tab[k++] = ft_dupword(s + i, j - i);
+		while (s[0] == c)
+			s++;
+		tab[i] = ft_dup_word((char *)s, c);
+		if (!tab[i])
+		{
+			while (i > 0)
+				free(tab[i--]);
+			free(tab);
+			return (NULL);
+		}
+		s += ft_strlen(tab[i]);
 	}
-	tab[ft_numwords(s, c)] = 0;
+	tab[i] = NULL;
 	return (tab);
 }

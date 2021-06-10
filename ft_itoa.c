@@ -1,4 +1,3 @@
-/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
@@ -6,34 +5,70 @@
 /*   By: abensett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 15:29:03 by abensett          #+#    #+#             */
-/*   Updated: 2021/06/09 15:29:05 by abensett         ###   ########.fr       */
+/*   Updated: 2021/06/10 11:48:36 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n1)
+static int	ft_lennb(long n)
 {
-	char	*s;
-	long	n;
-	
-	n = n1;
-	s = (char *) malloc(sizeof (char) * 2);
-	if (s == NULL)
-		return (NULL);
+	int	len;
 
+	len = 0;
 	if (n < 0)
 	{
-		s[0] = '-';
-		s[1] = '\0';
-		s = ft_strjoin(s, ft_itoa(-n));
+		len++;
+		n = -n;
 	}
-	else if (n > 9)
-		s = ft_strjoin(ft_itoa(n / 10), ft_itoa(n % 10));
-	else if (n <= 9 && n >= 0)
+	while (n >= 1)
 	{
-		s[0] = n + '0';
-		s[1] = '\0';
+		len++;
+		n /= 10;
 	}
-	return (s);
+	return (len);
+}
+
+static char	*ft_makingofstr(char *str, long nbr, int len, int sign)
+{
+	if (nbr != 0)
+		str = malloc(sizeof(char) * (len + 1));
+	else
+		return (str = ft_strdup("0"));
+	if (!str)
+		return (0);
+	sign = 0;
+	if (nbr < 0)
+	{
+		sign = -1;
+		nbr = -nbr;
+	}
+	str[len] = '\0';
+	while (--len)
+	{
+		str[len] = (nbr % 10) + '0';
+		nbr /= 10;
+	}
+	if (sign == -1)
+		str[0] = '-';
+	else
+		str[0] = (nbr % 10) + '0';
+	return (str);
+}
+
+char	*ft_itoa(int n)
+{
+	int		len;
+	char	*str;
+	long	nbr;
+	int		sign;
+
+	nbr = n;
+	len = ft_lennb(nbr);
+	str = 0;
+	sign = 0;
+	str = ft_makingofstr(str, nbr, len, sign);
+	if (!str)
+		return (0);
+	return (str);
 }

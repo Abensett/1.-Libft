@@ -6,7 +6,7 @@
 #    By: abensett <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/25 13:38:46 by abensett          #+#    #+#              #
-#    Updated: 2021/06/09 14:17:05 by abensett         ###   ########.fr        #
+#    Updated: 2021/06/10 11:30:38 by abensett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 
 SRC = 	ft_atoi.c \
 	ft_bzero.c \
-	 ft_calloc.c \
+	ft_calloc.c \
 	ft_isalnum.c \
 	ft_isdigit.c \
 	ft_isalpha.c \
@@ -74,7 +74,7 @@ clean:
 	/bin/rm -f $(OBJS)	$(OBJSBONUS)
 
 fclean:	clean
-	/bin/rm -f $(NAME)
+	/bin/rm -f $(NAME) 
 
 re:	fclean all
 

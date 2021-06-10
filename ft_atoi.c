@@ -6,15 +6,15 @@
 /*   By: abensett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 10:07:31 by abensett          #+#    #+#             */
-/*   Updated: 2021/06/09 15:23:16 by abensett         ###   ########.fr       */
+/*   Updated: 2021/06/10 14:30:07 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
-	int	nb;
+	int			i;
+	int			sign;
+	long		nb;
 
 	sign = 1;
 	nb = 0;
