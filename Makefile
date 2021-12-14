@@ -100,7 +100,7 @@ clean:
 			@rm -rf $(OBJS)	$(OBJSBONUS)
 			@printf "\n[$(GREEN)cleaned$(WHITE)] .o src/FILES \n"
 
-src/fclean:		clean
+fclean:		clean
 			@rm -rf $(NAME) 
 			@printf "\n[$(GREEN)cleaned$(WHITE)] $(NAME) \n"
 
