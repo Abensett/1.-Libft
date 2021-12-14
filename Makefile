@@ -67,6 +67,7 @@ SRCBONUS = src/ft_lstnew.c \
 	  src/ft_lstdelone.c \
 	  src/ft_lstclear.c \
 	  src/ft_lstiter.c \
+	  src/ft_lstfree.c \
 	  src/ft_lstmap.c \
 	  src/ft_lst_int_print.c \
 	  src/ft_lst_int_search.c \
