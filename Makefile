@@ -87,9 +87,11 @@ all:		$(NAME)
 
 $(NAME):	$(OBJS) 
 			@ar rc $(NAME) $(OBJS)
+			@printf "\n[$(GREEN)OK$(WHITE)] $(NAME)📙 generated \n"
 
 bonus:		$(OBJSBONUS)
 			@ar rc $(NAME) $(OBJSBONUS)
+			@printf "\n[$(GREEN)OK$(WHITE)] $(NAME)📙🅱  generated \n"
 .c.o:
 			@printf "\033[2K\r $(_YELLOW)Compiling $< $(_END)⌛"
 			@gcc -Wall -Wextra -Werror -c $< -o $(<:.c=.o)

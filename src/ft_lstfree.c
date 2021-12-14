@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 21:16:09 by abensett          #+#    #+#             */
-/*   Updated: 2021/12/14 21:17:38 by abensett         ###   ########.fr       */
+/*   Updated: 2021/12/14 21:25:07 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	ft_lstfree(t_list *list)
 {
 	t_list	*tmp;
 
-	while (list != NULL) 
-	{ 
-		tmp = list->next; 
-		free(list); 
-		list = tmp; 
+	while (list != NULL)
+	{
+		tmp = list->next;
+		free(list);
+		list = tmp;
 	}
 }

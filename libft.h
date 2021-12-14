@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 15:05:19 by abensett          #+#    #+#             */
-/*   Updated: 2021/12/14 21:18:23 by abensett         ###   ########.fr       */
+/*   Updated: 2021/12/14 21:25:19 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,7 +165,7 @@ void		ft_lstclear(t_list **lst, void (*del)(void *));
 /* delete the element */
 void		ft_lstdelone(t_list *lst, void (*del)(void *));
 // Free the list
-void	ft_lstfree(t_list *list);
+void		ft_lstfree(t_list *list);
 /* apply f() on the list*/
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 /*return last element*/
