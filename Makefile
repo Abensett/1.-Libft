@@ -21,6 +21,8 @@ SRC = src/ft_abs.c \
 	src/ft_atoi.c \
 	src/ft_bzero.c \
 	src/ft_calloc.c \
+	src/ft_double_abs.c \
+	src/ft_double_pow.c\
 	src/ft_isalnum.c \
 	src/ft_isdigit.c \
 	src/ft_isalpha.c \
@@ -78,7 +80,7 @@ SRCBONUS = src/ft_lstnew.c \
 	  src/ft_lst_long_check_order.c \
 	  src/ft_lst_long_fill.c \
 	  src/ft_lst_str_print.c \
-	
+
 
 OBJS = 		$(SRC:.c=.o)
 
@@ -86,7 +88,7 @@ OBJSBONUS = $(SRCBONUS:.c=.o)
 
 all:		$(NAME)
 
-$(NAME):	$(OBJS) 
+$(NAME):	$(OBJS)
 			@ar rc $(NAME) $(OBJS)
 			@printf "\n[$(GREEN)OK$(WHITE)] $(NAME)📙 generated \n"
 
@@ -102,7 +104,7 @@ clean:
 			@printf "\n[$(GREEN)cleaned$(WHITE)] .o src/FILES \n"
 
 fclean:		clean
-			@rm -rf $(NAME) 
+			@rm -rf $(NAME)
 			@printf "\n[$(GREEN)cleaned$(WHITE)] $(NAME) \n"
 
 re:			src/fclean all

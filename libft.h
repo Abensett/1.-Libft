@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 15:05:19 by abensett          #+#    #+#             */
-/*   Updated: 2021/12/18 19:15:43 by abensett         ###   ########.fr       */
+/*   Updated: 2022/01/05 18:10:11 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ long long	ft_atoll(const char *str);
 void		ft_bzero(void *s, size_t n);
 void		*ft_calloc(size_t count, size_t size);
 
+// DOUBLE
+double		ft_double_abs(double a);
+double		ft_double_pow(double a);
 int			ft_isalnum(int c);
 int			ft_isalpha(int c);
 int			ft_isascii(int c);
@@ -112,7 +115,7 @@ char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 char		*ft_strrchr(const char *s, int c);
 /*The strchr() function locates the first occurrence of c in the
-	 string pointed to by s.  The terminating null character is considered 
+	 string pointed to by s.  The terminating null character is considered
 	 to be part of the
 	 string; therefore if c is `\0', the functions locate the terminating `\0'.
 
@@ -148,16 +151,16 @@ char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strtrim(char const *s1, char const *set);
 
 typedef struct s_list
-{	
+{
 	void			*content;
 	struct s_list	*next;
 }					t_list;
 
 /* PART 3 */
-/*alst is the adress of the first element of the list 
+/*alst is the adress of the first element of the list
 and new the new element to add */
 void		ft_lstadd_back(t_list **alst, t_list *new);
-/*alst is the adress of the first element of the list 
+/*alst is the adress of the first element of the list
 and new the new element to add */
 void		ft_lstadd_front(t_list **alst, t_list *new);
 /* delete the element and the first pointer becomes NULL */
@@ -170,7 +173,7 @@ void		ft_lstfree(t_list *list);
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 /*return last element*/
 t_list		*ft_lstlast(t_list *lst);
-/* apply f() and return the list of elements on which 
+/* apply f() and return the list of elements on which
 the function was applied*/
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 /*content = contenu du nouvel element, la fonction
