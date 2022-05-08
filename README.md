@@ -26,7 +26,7 @@ This is a library of useful functions that I will supply during all the process 
 
 ## Bonus Functions
 ***
-
+TO CLEAN
 
 
 ***
