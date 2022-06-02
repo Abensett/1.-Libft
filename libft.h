@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 15:05:19 by abensett          #+#    #+#             */
-/*   Updated: 2022/05/08 10:49:39 by abensett         ###   ########.fr       */
+/*   Updated: 2022/05/29 19:54:44 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,12 @@ void		*ft_calloc(size_t count, size_t size);
 double		ft_double_abs(double a);
 double		ft_double_pow(double a);
 int			ft_isalnum(int c);
+int			ft_isstr_alnum(char *str);
 int			ft_isalpha(int c);
 int			ft_isascii(int c);
 int			ft_isdigit(int c);
 int			ft_isprint(int c);
+int			ft_isstr_num(char *str);
 
 void		*ft_memccpy(void *dest, const void *src, int c, size_t n);
 /*The memccpy() function copies bytes from string src to string dst.  If

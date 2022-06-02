@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_isstr_alnum.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/09 15:23:24 by abensett          #+#    #+#             */
-/*   Updated: 2022/05/09 10:27:13 by abensett         ###   ########.fr       */
+/*   Created: 2022/05/16 23:41:07 by abensett          #+#    #+#             */
+/*   Updated: 2022/05/29 19:54:31 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int	ft_isstr_alnum(char *str)
 {
-	unsigned char	*d;
-
-	d = (unsigned char *)s;
-	while (n != 0)
+	while (*str)
 	{
-		*d++ = '\0';
-		n--;
+		if (!ft_isalnum(*str))
+			return (0);
+		str++;
 	}
+	return (1);
 }
