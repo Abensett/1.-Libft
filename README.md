@@ -5,17 +5,17 @@
 <H1 align="center">
 PROJECT 1-LIBFT 42
 </H1>
-
+<!---
 ## Table of Contents
 1. [General Info](#general-info)
 2. [Functions](#Functions)
 3. [Bonus Functions (listes chaînées)](#Bonus-Functions)
-
+-->
 
 ### General Info
-***
-This is a library of useful functions that I will supply during all the process of learning coding in C.
 
+This is a library of useful functions that I will supply during all the process of learning coding in C.
+<!---
 ## Functions
 
 | Name             |    Action|
@@ -92,11 +92,11 @@ This is a library of useful functions that I will supply during all the process 
 
 ## Bonus Functions
 ***
-TO CLEAN
+
 
 
 ***
-
+-->
 ## 42 Project 115/100
 
 
