@@ -14,7 +14,7 @@ PROJECT 1-LIBFT 42
 
 ### General Info
 
-This is a library of useful functions that I will supply during all the process of learning coding in C.
+This is a library of useful functions that I will supply during all the process of learning to code in C.
 <!---
 ## Functions
 
